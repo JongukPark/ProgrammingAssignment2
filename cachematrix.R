@@ -53,7 +53,7 @@ makeCacheMatrix <- function(x = matrix()) {
 cacheSolve <- function(x, ...) {
 
     ## Return the inverse of 'x'
-    m <- x$get_Inverse()
+    i <- x$get_Inverse()
 
     ## Return the set inverse
     if( !is.null(m) ) {
@@ -65,11 +65,11 @@ cacheSolve <- function(x, ...) {
     data <- x$get()
 
     ## Calculate the inverse
-    m <- solve(data) %*% data
+    i <- solve(data) %*% data
 
     ## Set the inverse to the object
     x$set_Inverse(m)
 
     ## Return
-    m
+    i
 }
